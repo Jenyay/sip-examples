@@ -1,5 +1,5 @@
-%Module(name=foo, language="C++")
-%DefaultEncoding "ASCII"
+%Module(name=foocpp, language="C++")
+%DefaultEncoding "UTF-8"
 %Platforms {Linux macOS Windows}
 
 class Foo {
@@ -8,11 +8,11 @@ class Foo {
 	%End
 
 	public:
-		Foo(int int_val, char* string_val);
+		Foo(int int_val, const char* string_val);
 
 		void set_int_val(int val);
 		int get_int_val();
 
-		void set_string_val(char* val);
+		void set_string_val(const char* val);
 		char* get_string_val();
 };

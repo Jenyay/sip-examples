@@ -69,7 +69,7 @@ class FooProject(Project):
         """ Update the project configuration. """
 
         # Get the foo bindings object.
-        foo_bindings = self.bindings['pyfoo']
+        foo_bindings = self.bindings['pyfoocpp']
 
         # Use any user supplied include directory.
         if self.foo_include_dir is not None:

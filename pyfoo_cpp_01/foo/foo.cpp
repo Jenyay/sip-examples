@@ -3,7 +3,7 @@
 #include "foo.h"
 
 
-Foo::Foo(int int_val, char* string_val): _int_val(int_val) {
+Foo::Foo(int int_val, const char* string_val): _int_val(int_val) {
 	_string_val = nullptr;
 	set_string_val(string_val);
 }
@@ -25,7 +25,7 @@ int Foo::get_int_val() {
 }
 
 
-void Foo::set_string_val(char* val) {
+void Foo::set_string_val(const char* val) {
 	if (_string_val != nullptr) {
 		delete[] _string_val;
 	}

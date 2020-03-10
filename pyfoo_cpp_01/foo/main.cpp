@@ -1,9 +1,7 @@
-#include <string>
 #include <iostream>
 
 #include "foo.h"
 
-using std::string;
 using std::cout;
 using std::endl;
 

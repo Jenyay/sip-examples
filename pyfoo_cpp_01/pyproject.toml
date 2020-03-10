@@ -3,10 +3,10 @@ requires = ["sip >=5, <6"]
 build-backend = "sipbuild.api"
 
 [tool.sip.metadata]
-name = "pyfoo"
-version = "0.2"
+name = "pyfoocpp"
+version = "0.1"
 license = "MIT"
 
-[tool.sip.bindings.pyfoo]
+[tool.sip.bindings.pyfoocpp]
 headers = ["foo.h"]
 libraries = ["foo"]
