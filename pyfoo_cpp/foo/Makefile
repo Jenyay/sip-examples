@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-c
+CFLAGS=-c -fPIC
 DIR_OUT=bin
 
 all: main
