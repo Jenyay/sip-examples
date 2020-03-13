@@ -8,11 +8,11 @@ class Foo {
 	%End
 
 	public:
-		Foo(int int_val, const char* string_val);
+		Foo(int, const char*);
 
-		void set_int_val(int val);
+		void set_int_val(int);
 		int get_int_val();
 
-		void set_string_val(const char* val);
+		void set_string_val(const char*);
 		char* get_string_val();
 };

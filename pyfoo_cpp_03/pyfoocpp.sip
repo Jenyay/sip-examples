@@ -8,13 +8,13 @@ class Foo {
     %End
 
     public:
-        Foo(int int_val, std::wstring string_val);
+        Foo(int, std::wstring);
 
-        void set_int_val(int val);
+        void set_int_val(int);
         int get_int_val();
         %Property(name=int_val, get=get_int_val, set=set_int_val)
 
-        void set_string_val(std::wstring val);
+        void set_string_val(std::wstring);
         std::wstring get_string_val();
         %Property(name=string_val, get=get_string_val, set=set_string_val)
 };

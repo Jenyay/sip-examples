@@ -4,4 +4,4 @@
 #include <foo.h>
 %End
 
-int foo(char* str);
+int foo(char*);
