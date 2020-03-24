@@ -15,11 +15,11 @@ class FooProject(Project):
 
     def build_sdist(self, sdist_directory):
         self._build_foo()
-        super().build_sdist(sdist_directory)
+        return super().build_sdist(sdist_directory)
 
     def build_wheel(self, wheel_directory):
         self._build_foo()
-        super().build_wheel(wheel_directory)
+        return super().build_wheel(wheel_directory)
 
     def install(self):
         self._build_foo()

@@ -20,12 +20,14 @@ class FooProject(Project):
         inc_dir_option = Option('foo_include_dir',
                                 help="the directory containing foo.h",
                                 metavar="DIR",
+                                default=os.path.abspath('foo'),
                                 tools=tools)
         options.append(inc_dir_option)
 
         lib_dir_option = Option('foo_library_dir',
                                 help="the directory containing the foo library",
                                 metavar="DIR",
+                                default=os.path.abspath('foo/bin'),
                                 tools=tools)
         options.append(lib_dir_option)
 
@@ -34,20 +36,14 @@ class FooProject(Project):
     def apply_user_defaults(self, tool):
         """ Apply any user defaults. """
 
-        # Ensure any user supplied include directory is an absolute path.
-        if self.foo_include_dir is not None:
-            self.foo_include_dir = os.path.abspath(self.foo_include_dir)
-        else:
-            self.foo_include_dir = os.path.abspath('foo')
-
-        # Ensure any user supplied library directory is an absolute path.
-        if self.foo_library_dir is not None:
-            self.foo_library_dir = os.path.abspath(self.foo_library_dir)
-        else:
-            self.foo_library_dir = os.path.abspath('foo/bin')
-
         # Apply the defaults for the standard options.
         super().apply_user_defaults(tool)
+
+        # Ensure any user supplied include directory is an absolute path.
+        self.foo_include_dir = os.path.abspath(self.foo_include_dir)
+
+        # Ensure any user supplied library directory is an absolute path.
+        self.foo_library_dir = os.path.abspath(self.foo_library_dir)
 
     def update(self, tool):
         """ Update the project configuration. """
