@@ -11,6 +11,10 @@ class FooProject(Project):
         print('apply_user_defaults()')
         super().apply_user_defaults(tool)
 
+    def apply_nonuser_defaults(self, tool):
+        print('apply_nonuser_defaults()')
+        super().apply_nonuser_defaults(tool)
+
     def update(self, tool):
         print('update()')
         super().update(tool)
