@@ -1,3 +1,3 @@
 %Module(name=foo, language="C")
 
-int foo(char*);
+int foo(char* /Encoding="UTF-8"/);

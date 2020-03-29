@@ -4,11 +4,9 @@ build-backend = "sipbuild.api"
 
 [tool.sip.metadata]
 name = "pyfoo"
-version = "0.3"
+version = "0.5"
 license = "MIT"
 
 [tool.sip.bindings.pyfoo]
 headers = ["foo.h"]
 libraries = ["foo"]
-include-dirs = ["foo"]
-library-dirs = ["foo/bin"]

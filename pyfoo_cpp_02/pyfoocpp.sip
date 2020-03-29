@@ -1,6 +1,5 @@
 %Module(name=foocpp, language="C++")
 %DefaultEncoding "UTF-8"
-%Platforms {Linux macOS Windows}
 
 class Foo {
 	%TypeHeaderCode

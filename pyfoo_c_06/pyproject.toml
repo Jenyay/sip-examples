@@ -4,7 +4,7 @@ build-backend = "sipbuild.api"
 
 [tool.sip.metadata]
 name = "pyfoo"
-version = "0.3"
+version = "0.6"
 license = "MIT"
 
 [tool.sip.bindings.pyfoo]
