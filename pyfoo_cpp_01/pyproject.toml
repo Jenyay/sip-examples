@@ -10,3 +10,5 @@ license = "MIT"
 [tool.sip.bindings.pyfoocpp]
 headers = ["foo.h"]
 libraries = ["foo"]
+include-dirs = ["foo"]
+library-dirs = ["foo/bin"]
