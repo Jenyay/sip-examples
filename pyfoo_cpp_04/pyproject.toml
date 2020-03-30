@@ -4,7 +4,7 @@ build-backend = "sipbuild.api"
 
 [tool.sip.metadata]
 name = "pyfoocpp"
-version = "0.5"
+version = "0.4"
 license = "MIT"
 
 [tool.sip.bindings.pyfoocpp]
