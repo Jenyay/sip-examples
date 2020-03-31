@@ -1,0 +1,14 @@
+[build-system]
+requires = ["sip >=5, <6"]
+build-backend = "sipbuild.api"
+
+[tool.sip.metadata]
+name = "pyfoocpp"
+version = "0.6"
+license = "MIT"
+
+[tool.sip.bindings.pyfoocpp]
+headers = ["foo.h"]
+libraries = ["foo"]
+include-dirs = ["foo"]
+library-dirs = ["foo/bin"]

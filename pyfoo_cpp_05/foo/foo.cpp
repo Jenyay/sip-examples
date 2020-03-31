@@ -1,12 +1,18 @@
-#include <string>
+#include <string.h>
 
 #include "foo.h"
 
-using std::string;
+
+Foo::Foo(int int_val, const char* string_val): _int_val(int_val) {
+	_string_val = nullptr;
+	set_string_val(string_val);
+}
 
 
-Foo::Foo(int int_val, wstring string_val):
-	_int_val(int_val), _string_val(string_val) {}
+Foo::~Foo(){
+	delete[] _string_val;
+	_string_val = nullptr;
+}
 
 
 void Foo::set_int_val(int val) {
@@ -19,11 +25,17 @@ int Foo::get_int_val() {
 }
 
 
-void Foo::set_string_val(wstring val) {
-	_string_val = val;
+void Foo::set_string_val(const char* val) {
+	if (_string_val != nullptr) {
+		delete[] _string_val;
+	}
+
+	auto count = strlen(val) + 1;
+	_string_val = new char[count];
+	strcpy(_string_val, val);
 }
 
 
-wstring Foo::get_string_val() {
+char* Foo::get_string_val() {
 	return _string_val;
 }

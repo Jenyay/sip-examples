@@ -1,46 +1,51 @@
 %Module(name=foocpp, language="C++")
 %DefaultEncoding "UTF-8"
+%DefaultDocstringFormat "deindented"
+%DefaultDocstringSignature "prepended"
 
-class Foo {
+class Foo /PyName=Bar/ {
+	%Docstring
+	Class example from C++ library
+	%End
+
     %TypeHeaderCode
     #include <foo.h>
     %End
 
     public:
-        Foo(int, std::wstring);
+        Foo(int, const char*);
 
-        void set_int_val(int);
-        int get_int_val();
-        %Property(name=int_val, get=get_int_val, set=set_int_val)
+        void set_int_val(int) /PyName=set_integer_value/;
+        %Docstring
+            Set integer value
+        %End
 
-        void set_string_val(std::wstring);
-        std::wstring get_string_val();
-        %Property(name=string_val, get=get_string_val, set=set_string_val)
-};
+        int get_int_val() /PyName=get_integer_value/;
+        %Docstring
+            Return integer value
+        %End
 
+        %Property(name=int_val, get=get_integer_value, set=set_integer_value)
+        {
+            %Docstring
+                The property for integer value
+            %End
+        };
 
-%MappedType std::wstring
-{
-%TypeHeaderCode
-#include <string>
-%End
+        void set_string_val(const char*) /PyName=set_string_value/;
+        %Docstring
+            Set string value
+        %End
 
-%ConvertFromTypeCode
-    // Convert an std::wstring to a Python (Unicode) string
-    PyObject* newstring;
-    newstring = PyUnicode_FromWideChar(sipCpp->data(), -1);
-    return newstring;
-%End
+        char* get_string_val() /PyName=get_string_value/;
+        %Docstring
+            Return string value
+        %End
 
-%ConvertToTypeCode
-    // Convert a Python (Unicode) string to an std::wstring
-    if (sipIsErr == NULL) {
-        return PyUnicode_Check(sipPy);
-    }
-    if (PyUnicode_Check(sipPy)) {
-        *sipCppPtr = new std::wstring(PyUnicode_AS_UNICODE(sipPy));
-        return 1;
-    }
-    return 0;
-%End
+        %Property(name=string_val, get=get_string_value, set=set_string_value)
+        {
+            %Docstring
+                The property for string value
+            %End
+        };
 };
