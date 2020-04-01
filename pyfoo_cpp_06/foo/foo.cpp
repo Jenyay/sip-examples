@@ -2,7 +2,7 @@
 
 #include "foo.h"
 
-using std::string;
+using std::wstring;
 
 
 Foo::Foo(int int_val, wstring string_val):
